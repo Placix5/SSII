@@ -16,7 +16,10 @@ public class BYODCliente {
 		// Constructor que abre una conexión Socket para enviar mensaje/MAC al
 		// servidor
 		try {
+
+			//Construye el socket
 			SSLSocketFactory socketFactory = (SSLSocketFactory) SSLSocketFactory.getDefault();
+			//Establece el puerto usado en la comunicación
 			SSLSocket socket = (SSLSocket) socketFactory.createSocket("localhost", 7070);
 
 			// crea un PrintWriter para enviar mensaje al servidor
@@ -30,7 +33,7 @@ public class BYODCliente {
                     "Introduzca su usuario:");
             //Introducimos contraseña        
             String contrasenya = JOptionPane.showInputDialog(null,
-					"Introduzca su contraseña:");
+					"Introduzca su contrasenia:");
 			output.println(mensaje); // envio del mensaje al servidor
             output.println(usuario);//Envío de la usuario al servidor
             output.println(contrasenya);//Envío de la usuario al servidor
