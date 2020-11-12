@@ -33,7 +33,9 @@ public class BYODServer {
 		Integer a=0;
         Integer f=0;
         Map<String, String> userdata = new HashMap<String, String>();
-        userdata.put("b49a5780a99ea81284fc0746a78f84a30e4d5c73", "7be057c04632bd379b952d0cb82fac77dac1f867"); //usuario:juan pass:elpepe
+        userdata.put("b49a5780a99ea81284fc0746a78f84a30e4d5c73",
+         "7be057c04632bd379b952d0cb82fac77dac1f867"); //usuario:juan pass:elpepe
+
 		while (true) {
 			// espera las peticiones del cliente para comprobar el usuario y contraseña
 			try {
@@ -85,7 +87,7 @@ public class BYODServer {
                         output.println("La contrasenya enviada es erronea");
                     }
 				} else {
-                    output.println("Usuario no regitrado");
+                    output.println("Usuario no registrado");
                 }
                 bw.close();
 				output.close();
