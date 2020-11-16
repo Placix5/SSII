@@ -10,7 +10,8 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SignatureException;
 
 public class BYODCliente {
-
+	private static final String[] protocols = new String[]{"TLSv1.2"};
+	//private static final String[] cipher_suites = new String[]{"TLS_AES_128_GCM_SHA256"};
 
     public BYODCliente() throws InvalidKeyException, SignatureException, NoSuchAlgorithmException {
 		// Constructor que abre una conexión Socket para enviar mensaje/MAC al
@@ -21,6 +22,8 @@ public class BYODCliente {
 			SSLSocketFactory socketFactory = (SSLSocketFactory) SSLSocketFactory.getDefault();
 			//Establece el puerto usado en la comunicación
 			SSLSocket socket = (SSLSocket) socketFactory.createSocket("localhost", 7070);
+			socket.setEnabledProtocols(protocols);
+			//socket.setEnabledCipherSuites(cipher_suites);
 
 			// crea un PrintWriter para enviar mensaje al servidor
 			PrintWriter output = new PrintWriter(new OutputStreamWriter(
