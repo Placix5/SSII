@@ -19,13 +19,17 @@ import javax.net.ssl.SSLServerSocketFactory;
 public class BYODServer {
 
     private SSLServerSocket serverSocket;
-
+        //private static final String[] protocols = new String[]{"TLSv1.3"};
+        //private static final String[] cipher_suites = new String[]{"TLS_AES_128_GCM_SHA256"};
 	// Constructor
 	public BYODServer() throws Exception {
+
 		// ServerSocketFactory para construir los ServerSockets
 		SSLServerSocketFactory socketFactory = (SSLServerSocketFactory) SSLServerSocketFactory.getDefault();
 		// creación de un objeto ServerSocket (se establece el puerto)
-		serverSocket = (SSLServerSocket) socketFactory.createServerSocket(7070);
+        serverSocket = (SSLServerSocket) socketFactory.createServerSocket(7070);
+        //serverSocket.setEnabledProtocols(protocols);
+        //serverSocket.setEnabledCipherSuites(cipher_suites);
 	}
 
 	// ejecución del servidor para escuchar peticiones de los clientes
